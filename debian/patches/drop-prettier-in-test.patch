@@ -1,0 +1,30 @@
+Description: prettier isn't available
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-02-19
+
+--- a/tests/helper/test-case.js
++++ b/tests/helper/test-case.js
+@@ -3,7 +3,6 @@
+ const fs = require('fs');
+ const path = require('path');
+ const { assert } = require('chai');
+-const Prettier = require('prettier');
+ const PrismLoader = require('./prism-loader');
+ const TokenStreamTransformer = require('./token-stream-transformer');
+ 
+@@ -257,13 +256,7 @@
+ 	 * @returns {string}
+ 	 */
+ 	print(actual) {
+-		return Prettier.format(actual, {
+-			printWidth: 100,
+-			tabWidth: 4,
+-			useTabs: true,
+-			htmlWhitespaceSensitivity: 'ignore',
+-			filepath: 'fake.html',
+-		});
++		return actual
+ 	}
+ 	/**
+ 	 * @param {string} actual

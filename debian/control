@@ -1,15 +1,43 @@
-Source: template-repository
-Section: unknown
+Source: node-prismjs
+Section: javascript
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: chai <!nocheck>
+ , debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , mocha <!nocheck>
+ , node-jsdom <!nocheck>
+ , node-yargs <!nocheck>
+ , terser
+Standards-Version: 4.6.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-prismjs
+Vcs-Git: https://salsa.debian.org/js-team/node-prismjs.git
+Homepage: https://github.com/LeaVerou/prism
+Testsuite: autopkgtest-pkg-nodejs
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: node-prismjs
+Architecture: all
+Depends: ${misc:Depends}
+ , node-clipboard
+Provides: ${nodejs:Provides}
+Description: Lightweight, robust, elegant syntax highlighting
+ A spin-off project from Dabblet. Some of its unique features include:
+  * It’s tiny. The core is only 1.5KB minified & gzipped.
+  * It’s incredibly extensible. Not only it’s easy to add new languages, but
+    also to extend existing ones.
+  * It encourages good author practices. Other highlighters encourage or even
+    force you to use elements that are semantically wrong, like <pre> (on its
+    own) or <script>. Prism forces you to use the only semantically correct
+    element for marking up code: <code>.
+  * One of its best features: The language definition is inherited. This means
+    that if multiple code snippets have the same language, you can just define
+    it once, in one of their common ancestors.
+  * It looks good. All three of its existing themes.
+  * It supports parallelism through Web Workers, for better performance in
+    certain cases.
+  * It doesn’t force you to use any Prism-specific markup, not even a
+    Prism-specific class name, only standard markup you should be using anyway.
+ .
+ Node.js is an event-based server-side JavaScript engine.

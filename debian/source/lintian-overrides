@@ -1,0 +1,7 @@
+# false positive
+source-is-missing *.js*
+source-contains-prebuilt-javascript-object *.js*
+very-long-line-length-in-source-file *.js*
+
+# Generic types-* path
+add-component-copyright types-*
